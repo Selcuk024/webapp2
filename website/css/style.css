@@ -56,3 +56,8 @@ h1{
     border: solid 1px #000;
     border-radius: 5px;
 }
+.tet{
+    position: absolute;
+    top: 3%;
+    right: 17%;
+}
