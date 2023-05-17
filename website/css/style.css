@@ -18,6 +18,57 @@
     width: 5%;
     margin-left: 56px;
 }
+
+.nav-topics-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20%;
+    background-color: #0000;
+    width: 400px;
+}
+
+/* Nav Topics */
+
+.my-account{
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    position: relative;
+}
+.my-account:hover{
+    color: rgb(21, 21, 21);
+    font-size: 18px;
+    font-weight: 800;
+    position: relative;
+}
+
+.about-us{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+}
+.about-us:hover{
+    color: rgb(21, 21, 21);
+    font-size: 18px;
+    font-weight: 800;
+    position: relative;
+}
+
+.contact{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+}
+.contact:hover{
+    color: rgb(21, 21, 21);
+    font-size: 18px;
+    font-weight: 800;
+    position: relative;
+}
+
 h1{
     margin-left: 12px;
     font-size: 18px;
