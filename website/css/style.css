@@ -282,6 +282,30 @@ h1{
     align-items: center;
     margin-right: 24px;
 }
+.all-button{
+    display:inline-block;
+    width: 70px;
+    height: 40px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    margin-right: 24px;
+}
+.all-button:hover:after{
+    transform: scaleX(1);   
+}
+.all-button:after{  
+    display:block;
+    content: '';
+    border-bottom: solid 3px #019fb6;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+    transform-origin:  0% 50%; }
+
 .popular-container3{
     width: 20%;
     display: flex;

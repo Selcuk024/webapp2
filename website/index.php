@@ -177,6 +177,10 @@
                 <a href="book.php" class="book-button">Book Now</a>
                 </div>
             </div>
+            <div class="popular-destinations">
+            <a href="book.php" class="all-button">View All</a>
+
+            </div>
         </div>
     </div>
 </body>
