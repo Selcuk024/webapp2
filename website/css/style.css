@@ -369,3 +369,108 @@ h1{
     font-weight: 700;
 
 }
+/* contact page */
+.contact-page-bg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+.contact-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+.contact-info{
+    width: 75%;
+    height: 70%;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11.5px );
+    -webkit-backdrop-filter: blur( 11.5px );
+    border-radius: 10px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+}
+.contact-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+}
+.contact-column2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+.contact-text{
+    font-size: 42px;
+    font-weight: 600;
+    margin-left: 56px;
+}
+.contact-form{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    gap: 21px;
+    margin-left: 56px;
+}
+.field1{
+    width: 50%;
+    height: 42px;
+    font-size: 15px;
+}
+.field2{
+    font-size: 15px;
+
+    height: 42px;
+}
+.big{
+    font-size: 15px;
+    padding-left: 12px;
+    padding-top: 12px;
+    height: 120px;
+}
+input{
+    padding-left: 12px;
+}
+.form-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+.contact-small-text{
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+.container-contact{
+    height: 54%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.another-contact-container{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.contact-submit{
+    width: 20%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: 64px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+    padding-right: 12px;
+    font-size: 21px;
+    border: none;
+    border-radius: 5px;
+}
