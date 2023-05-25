@@ -8,7 +8,7 @@ $(document).ready(function() {
           event.preventDefault();
           if (delay) return;
           delay = true;
-          setTimeout(function() { delay = false }, 100)
+          setTimeout(function() { delay = false }, 400)
   
           var wd = event.originalEvent.wheelDelta || -event.originalEvent.detail;
           console.log(wd);
