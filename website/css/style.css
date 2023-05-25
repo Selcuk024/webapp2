@@ -474,3 +474,173 @@ input{
     border: none;
     border-radius: 5px;
 }
+
+/* About us */ 
+
+main {
+    width: 100%;
+    height: 1100px;
+    background-color: #0000;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    height: 57%;
+    width: 100%;
+    background-color: blue;
+    overflow-x: hidden;
+  }
+  
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 34%;
+    margin-top: 8%;
+    width: 650px;
+    height: 250px;
+    background-color: #0000;
+    font-size: 40px;
+    position: fixed;
+    z-index: 4;
+  
+  }
+  
+  .about-us-text {
+    display: flex;
+    font-family: sans-serif;
+    color: black;
+    font-size: 140px;
+    z-index: 4;
+  }
+  
+  .polynesia-image-background {
+    margin-top: -200px;
+    width: 100%;
+    height: 900px;
+    opacity: 100%;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .polynesia-image-overlay {
+    margin-top: -240px;
+    width: 100%;
+    height: 900px;
+    opacity: 100%;
+    position: absolute;
+    opacity: 100%;
+    z-index: 5;
+  }
+  
+  ul {
+    top: calc(100% / 2 - 60px);
+    position: fixed;
+    height: auto;
+    right: 10px;
+  }
+  
+  li {
+    list-style-type: none;
+    width: 8px;
+    height: 8px;
+    background-color: brown;
+    border-radius: 4px;
+    margin: 20px 15px;
+    transition: 0.3s ease;
+  }
+  
+  .active {
+    background-color: yellow;
+  }
+  
+  .section {
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+  }
+  
+  #sec1 {
+    width: 100%;
+    height: 675px;
+    background-color: #0000;
+    overflow: hidden;
+  }
+  
+  /* Section 2 */
+  
+  #sec2 {
+    background-color: rgb(153, 204, 255);
+    z-index: 5;
+    height: 600px;
+  }
+  
+  .section2-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    background-color: rgb(153, 204, 255);
+    z-index: 5;
+    margin-top: -20px;
+  }
+  
+  .about-us-text2-container {
+    margin-top: 85px;
+    width: 600px;
+    height: 250px;
+  }
+  
+  .about-us-koptext {
+    display: flex;
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: black;
+    font-size: 30px;
+    z-index: 4;
+  }
+  
+  .about-us-text2 {
+    display: flex;
+    margin-top: -15px;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: black;
+    font-size: 20px;
+    z-index: 4;
+  }
+  
+  .our-story-container {
+    width: 600px;
+    height: 250px;
+  }
+  
+  .our-story-koptext {
+    display: flex;
+    margin-top: 15px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: black;
+    font-size: 30px;
+    z-index: 4;
+  }
+  
+  .our-story-text2 {
+    display: flex;
+    font-family: sans-serif;
+    margin-top: 5px;
+    font-weight: 100;
+    color: black;
+    font-size: 20px;
+    z-index: 4;
+  }
+  
