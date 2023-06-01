@@ -183,6 +183,12 @@
             </div>
         </div>
     </div>
+    <?php
+    include_once("login.php");
+
+    include_once("register.php");
+?>
+
 </body>
 
 </html>

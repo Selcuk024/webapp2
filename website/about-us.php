@@ -54,6 +54,14 @@
                     d="M496.383 103.497H79.5794C66.8698 103.497 56.5332 93.3667 56.5332 80.9051C56.5332 68.4435 66.8296 58.3134 79.5794 58.3134H496.383"
                     stroke="white" stroke-width="5" stroke-miterlimit="10" />
             </svg>
+            <svg class="sec2-linksonder" width="162" height="89" viewBox="0 0 162 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 89L5.5 82.3947C5.5 39.8905 39.3175 5.49976 80.9051 5.49976C122.493 5.49975 156.31 39.8905 156.31 82.3947V89H161.31V82.3947C161.31 37.2186 125.343 0.499754 80.9051 0.499756C36.4674 0.499759 0.5 37.2186 0.5 82.3947L0.5 89H5.5Z" fill="white"/>
+</svg>
+<svg class="sec2-rechtsboven" width="161" height="81" viewBox="0 0 161 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0C0.925421 44.3608 36.5311 80.1238 80.3866 80.1238C124.242 80.1238 159.848 44.3608 160.773 0H155.772C154.848 41.6843 121.395 75.1238 80.3866 75.1238C39.3783 75.1238 5.92504 41.6843 5.00115 0H0Z" fill="#D9D9D9"/>
+</svg>
+
+
         </main>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -74,7 +82,11 @@
             }
         });
     </script>
+    <?php
+    include_once("login.php");
 
+    include_once("register.php");
+?>
 </body>
 
 </html>

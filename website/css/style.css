@@ -664,7 +664,7 @@ li {
     overflow: hidden;
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 104%;
     background-color: rgb(153, 204, 255);
     z-index: 5;
     margin-top: -20px;
@@ -698,4 +698,230 @@ li {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+.sec2-linksonder{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.sec2-rechtsboven{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* boook page */
+.book-container{
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.book-container2{
+    width: 75%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: start;
+}
+.book-container3{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    align-items: center;
+    margin-top: 56px;
+    flex-direction: column;
+    
+}
+.book-text{
+    font-size: 42px;
+    font-weight: 600;
+    margin-top: auto;
+    margin-left: 0px;
+}
+.search-container{
+    width: 75%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+.searchbar{
+    width: 70%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #D9D9D9;
+}
+.search-button{
+    padding: 0;
+    width: 7%;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 12px;
+
+}
+.clear-button{
+    padding: 0;
+    width: 7%;
+    height: 40px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+    border: solid 1px #D9D9D9;
+    border-radius: 5px;
+    margin-left: auto;
+}
+.search-flex-box{
+    display: flex;
+}
+.container-book-new{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.filter-container{
+    margin-top: 56px;
+}
+.sort-a-z{
+    width: 12%;
+    border-radius: 5px 0px 0px 5px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    font-size: 16px;
+}
+.sort-price{
+    width: 12%;
+    border-radius: 0px 5px 5px 0px;
+    height: 40px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    border: solid 1px #D9D9D9;
+    font-size: 16px;
+    margin-right: auto;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+
+}
+.overlay:target{
+    visibility: visible;
+    opacity: 1;
+}
+.wrapper{
+    width: 30%;
+    height: 80vh;
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 9px;
+    position: relative;
+    transition: all 1s ease-in-out;
+}
+.wrapper .close{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.wrapper .content{
+    overflow: auto;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px 0;
+
+}
+
+.form label{
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+.form{
+    width: 75%;
+    height: 69vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.submit{
+    background-color: #000;
+    color: #fff;
+    width: 40%;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 26px;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-right: auto;
+    padding: 0px;
+    
+}
+.label{
+    margin-right: auto;
+}
+
+.login-text{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #413b3b;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 30px;
+    resize: vertical 
+}
+h3{
+    text-align: center;
+    margin-top: 5px;
+    font-size: 30px;
+}
+#confirm_password{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #413b3b;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical 
+}
+.pilot{
+    width: 40%;
+    margin-bottom: 24px;
 }

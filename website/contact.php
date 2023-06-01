@@ -23,11 +23,14 @@
             <p class="contact-text">
                 Any Questions? Ask Us!
             </p>
-            <form class="contact-form" action="" method="post">
-                <input type="text" class="field1" placeholder="Your Name">
-                <input type="text" class="field2" placeholder="Your E-Mail">
-                <input type="text" class="field2" placeholder="Your Phone Number">
-                <textarea class="big" placeholder="Your Message"></textarea>
+            
+
+            <form class="contact-form" name="myemailform" action="form-to-email.php">
+  
+                <input type="text" name="name" class="field1" placeholder="Your Name">
+                <input type="text" name="email" class="field2" placeholder="Your E-Mail">
+                <input type="text" name="number" class="field2" placeholder="Your Phone Number">
+                <textarea class="big" name="message" placeholder="Your Message"></textarea>
 
             </div>
             <div class="contact-column2">
@@ -54,5 +57,10 @@
 
         </div>
     </div>
+    <?php
+    include_once("login.php");
+
+    include_once("register.php");
+?>
 </body>
 </html>

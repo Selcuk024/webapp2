@@ -10,5 +10,5 @@
         <a href="contact.php" class="contact">Contact<a>
     </div>
     <a class="nav-login-button" href="login.php">Register</a>
-    <a class="nav-signup-button" href="sign-up.php">Sign In</a>
+    <a class="nav-signup-button" href="#divOne">Sign In</a>
 </div>
