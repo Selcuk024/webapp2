@@ -1,3 +1,15 @@
+<?php
+session_start();
+ob_start();
+$dsn = 'mysql:dbname=worldwide_booking;host=127.0.0.1';
+$user = 'root';
+$password = '';
+
+try {
+    $connectie = new PDO($dsn, $user, $password);
+} catch (PDOException $e) {
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +72,11 @@
     <?php
     include_once("login.php");
 
-    include_once("register.php");
+    include_once("signup.php");
 ?>
 </body>
+
+<?php
+ob_end_flush();
+?>
 </html>

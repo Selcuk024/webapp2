@@ -9,6 +9,6 @@
         <a href="about-us.php" class="about-us">About Us</a>
         <a href="contact.php" class="contact">Contact<a>
     </div>
-    <a class="nav-login-button" href="login.php">Register</a>
+    <a class="nav-login-button" href="#register">Register</a>
     <a class="nav-signup-button" href="#divOne">Sign In</a>
 </div>
