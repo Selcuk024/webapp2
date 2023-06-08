@@ -10,6 +10,15 @@ try {
 } catch (PDOException $e) {
 }
 ?>
+<?php
+
+
+$loggedIn = false;
+
+if (isset($_SESSION['user'])) {
+    $loggedIn = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,16 +34,22 @@ try {
     <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <title>Scroll test</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+        
 </head>
 
 <body>
-    <?php
+<?php
+  if (isset($_SESSION['user'])) {
+    include_once("navbar-logged-in.php");
+} else {
     include_once("navbar-not-logged-in.php");
-    ?>
+}
+?>
     <div class="section" id="sec1">
 
         <img class="polynesia-image-background" src="media/polynesia2-image-background.png">
@@ -46,7 +61,7 @@ try {
     <div class="section" id="sec2">
         <main class="section2-main">
             <div class="about-us-text2-container">
-                <h1 class="about-us-text2">At World Wide Booking, we believe that travel has
+                <h1 data-aos="fade-down" class="about-us-text2">At World Wide Booking, we believe that travel has
                     the power to enrich lives and broaden
                     horizons.
                     Our mission is to provide seamless travel experiences that inspire and connect people
@@ -76,6 +91,15 @@ try {
 
         </main>
     </div>
+  
+    <?php
+    include_once("login.php");
+
+    include_once("signup.php");
+?>
+</body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="javascript/main.js"></script>
     <script>
@@ -94,13 +118,6 @@ try {
             }
         });
     </script>
-    <?php
-    include_once("login.php");
-
-    include_once("signup.php");
-?>
-</body>
-
 <?php
 ob_end_flush();
 ?>

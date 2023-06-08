@@ -14,7 +14,7 @@
                 $mail = $_POST['mail'];
                 $password = $_POST['password'];
 
-                $stmt = $connectie->prepare("SELECT * FROM users WHERE mail=? AND password=?");
+                $stmt = $connectie->prepare("SELECT * FROM users WHERE mail=? AND wachtwoord=?");
                 $stmt->execute([$mail, $password]);
                 $user = $stmt->fetch();
 

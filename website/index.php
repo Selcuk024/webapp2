@@ -7,10 +7,20 @@ $password = '';
 
 try {
     $connectie = new PDO($dsn, $user, $password);
+    
 } catch (PDOException $e) {
+    
 }
 ?>
+<?php
 
+
+$loggedIn = false;
+
+if (isset($_SESSION['user'])) {
+    $loggedIn = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +37,13 @@ try {
 </head>
 
 <body>
-    <?php
+<?php
+  if (isset($_SESSION['user'])) {
+    include_once("navbar-logged-in.php");
+} else {
     include_once("navbar-not-logged-in.php");
-    ?>
+}
+?>
     <img class="home-image" src="media/home-image.png">
     <div class="container-home">
         <div class="container-destination">
@@ -71,7 +85,7 @@ try {
             <div class="destination-box">
                 <div class="from">
                     <p class="small-text">FROM</p>
-                    <p class="big-text">*City Name*</p>
+                    <input type="text" class="big-text-input" maxlength="12" placeholder="City Name">
                     <p class="country">*Country*</p>
                 </div>
                 <div class="circle">
@@ -93,39 +107,19 @@ try {
                     <div class="date-container">
                         <div class="date-half">
                             <p class="small-text">DEPARTURE</p>
-                            <p class="big-text">Wed, 10 May</p>
+                            <input type="date">
                         </div>
                         <div class="other-half">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <rect width="32" height="32" fill="url(#pattern0)" />
-                                <defs>
-                                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                        <use xlink:href="#image0_3_65" transform="scale(0.0104167)" />
-                                    </pattern>
-                                    <image id="image0_3_65" width="96" height="96"
-                                        xlink:href="data:image/png;base64,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" />
-                                </defs>
-                            </svg>
+
                         </div>
                     </div>
                     <div class="date-container">
                         <div class="date-half">
                             <p class="small-text">ARRIVAL</p>
-                            <p class="big-text">Tue, 16 May</p>
+                            <input type="date">
                         </div>
                         <div class="other-half">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <rect width="32" height="32" fill="url(#pattern0)" />
-                                <defs>
-                                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                        <use xlink:href="#image0_3_65" transform="scale(0.0104167)" />
-                                    </pattern>
-                                    <image id="image0_3_65" width="96" height="96"
-                                        xlink:href="data:image/png;base64,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" />
-                                </defs>
-                            </svg>
+                           
                         </div>
                     </div>
                 </div>

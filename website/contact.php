@@ -10,8 +10,18 @@ try {
 } catch (PDOException $e) {
 }
 ?>
+<?php
+
+
+$loggedIn = false;
+
+if (isset($_SESSION['user'])) {
+    $loggedIn = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,48 +33,53 @@ try {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 </head>
-<body >
+
+<body>
     <img class="contact-page-bg" src="media/contact-background.jpeg">
-<?php
+    <?php
+  if (isset($_SESSION['user'])) {
+    include_once("navbar-logged-in.php");
+} else {
     include_once("navbar-not-logged-in.php");
-    ?>
+}
+?>
     <div class="contact-container">
         <div class="contact-info">
             <div class="contact-column">
-                
-            <p class="contact-text">
-                Any Questions? Ask Us!
-            </p>
-            
 
-            <form class="contact-form" name="myemailform" action="form-to-email.php">
-  
-                <input type="text" name="name" class="field1" placeholder="Your Name">
-                <input type="text" name="email" class="field2" placeholder="Your E-Mail">
-                <input type="text" name="number" class="field2" placeholder="Your Phone Number">
-                <textarea class="big" name="message" placeholder="Your Message"></textarea>
+                <p class="contact-text">
+                    Any Questions? Ask Us!
+                </p>
+
+
+                <form class="contact-form" name="myemailform" action="form-to-email.php">
+
+                    <input type="text" name="name" class="field1" placeholder="Your Name">
+                    <input type="text" name="email" class="field2" placeholder="Your E-Mail">
+                    <input type="text" name="number" class="field2" placeholder="Your Phone Number">
+                    <textarea class="big" name="message" placeholder="Your Message"></textarea>
 
             </div>
             <div class="contact-column2">
                 <div class="container-contact">
-                <p class="contact-small-text">How Would You Like Us To Contact You?</p>
-                <div class="form-container">
-                <input type="radio" id="mail-me" name="options" value="Mail Me">
-                  <label for="mail-me">Mail Me</label>
+                    <p class="contact-small-text">How Would You Like Us To Contact You?</p>
+                    <div class="form-container">
+                        <input type="radio" id="mail-me" name="options" value="Mail Me">
+                          <label for="mail-me">Mail Me</label>
 
-                </div>
-                <div class="form-container">
+                    </div>
+                    <div class="form-container">
 
-                <input type="radio" id="call-me" name="options" value="Call Me">
-                  <label for="call-me">Call Me</label>
-                </div>
+                        <input type="radio" id="call-me" name="options" value="Call Me">
+                          <label for="call-me">Call Me</label>
+                    </div>
 
                 </div>
                 <div class="another-contact-container">
                     <input type="submit" class="contact-submit" value="Submit">
                 </div>
-            </form>
-            
+                </form>
+
             </div>
 
         </div>
@@ -79,4 +94,5 @@ try {
 <?php
 ob_end_flush();
 ?>
+
 </html>

@@ -10,6 +10,15 @@ try {
 } catch (PDOException $e) {
 }
 ?>
+<?php
+
+
+$loggedIn = false;
+
+if (isset($_SESSION['user'])) {
+    $loggedIn = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,9 +35,14 @@ try {
 </head>
 
 <body>
-    <?php
+<?php
+  if (isset($_SESSION['user'])) {
+    include_once("navbar-logged-in.php");
+} else {
     include_once("navbar-not-logged-in.php");
-    ?>
+}
+?>
+
     <div class="book-container">
         <div class="book-container2">
             <h1 class="book-text">
@@ -40,62 +54,67 @@ try {
     <div class="book-container3">
         <div class="search-container">
             <div class="search-flex-box">
-                <input type="text" class="searchbar" placeholder="Search Your Destination ">
-                <button class="clear-button">Clear</button>
-                <input type="submit" value="Search" class="search-button">
+                <form class="x" method="post">
+                    <input type="text" class="searchbar" name="zoekveld" placeholder="Search">
+                    <button class="clear-button">Clear</button>
+                    <input type="submit" value="Search" class="search-button">
+
+                </form>
             </div>
             <div class="filter-container">
-                <button class="sort-a-z">Sort By A-Z</button><button class="sort-price">Sort By Price</button>
+                <?php
+                 $sorting = $_GET['sort'];
+                 var_dump($sorting);
+                ?>
+                <a href="?sort=a-z"  class="sort-a-z <?php $sorting == "a-z" ? 'background' : '' ?>">Sort By
+                    A-Z</a><a href="?sort=price" <?php $sorting == "price" ? 'background' : '' ?>
+                    class="sort-price">Sort By Price</a>
             </div>
 
         </div>
-        <div class="container-home3">
-            <div class="container-book-new">
-                <div class="popular-destinations">
-                    <div class="popular-container1">
-                        <img class="popular-section1" src="media/bahamas-hotel-image.png">
-                    </div>
-                    <div class="popular-container2">
-                        <p class="big-text left">Margaritaville Resort Deluxe Rooms</p>
-                        <p class="medium-text left">STARS</p>
-                        <p class="small-text left">Caribbean, The Bahamas</p>
-                        <p class="price left">$430 Per Night</p>
-                    </div>
-                    <div class="popular-container3">
-                        <a href="book.php" class="book-button">Book Now</a>
-                    </div>
-                </div>
-                <div class="popular-destinations">
-                    <div class="popular-container1">
-                        <img class="popular-section1" src="media/trump-tower-image.png">
-                    </div>
-                    <div class="popular-container2">
-                        <p class="big-text left">Trump Tower</p>
-                        <p class="medium-text left">STARS</p>
-                        <p class="small-text left">Las Vegas, United States of America</p>
-                        <p class="price left">$740 Per Night</p>
-                    </div>
-                    <div class="popular-container3">
-                        <a href="book.php" class="book-button">Book Now</a>
-                    </div>
-                </div>
-                <div class="popular-destinations">
-                    <div class="popular-container1">
-                        <img class="popular-section1" src="media/titanic-hotel-image.jpg">
-                    </div>
-                    <div class="popular-container2">
-                        <p class="big-text left">Titanic Beach Resort</p>
-                        <p class="medium-text left">STARS</p>
-                        <p class="small-text left">Antalya, Turkiye</p>
-                        <p class="price left">$300 Per Night</p>
-                    </div>
-                    <div class="popular-container3">
-                        <a href="book.php" class="book-button">Book Now</a>
-                    </div>
-                </div>
 
-            </div>
-        </div>
+        <?php
+    
+        if (isset($_POST['zoekveld'])) {
+            $statement = $connectie->prepare("SELECT * FROM destinations WHERE naam LIKE ? ");
+            $statement->execute(['%' . $_POST['zoekveld'] . '%']);
+            $destinations = $statement->fetchAll();
+
+        }elseif($sorting == "a-z") {
+            $statement = $connectie->prepare("SELECT * FROM destinations ORDER BY  naam ASC");
+            $statement->execute();
+            $destinations = $statement->fetchAll();
+        } elseif($sorting == "price"){
+            $statement = $connectie->prepare("SELECT * FROM destinations ORDER BY prijs ASC ");
+            $statement->execute();
+            $destinations = $statement->fetchAll();
+        }else { 
+            $statement = $connectie->query("SELECT * FROM destinations");
+            $destinations = $statement->fetchAll();
+        }
+
+            foreach ($destinations as $destination) {
+                echo '<div class="container-home3">
+                        <div class="container-book-new">
+                            <div class="popular-destinations">
+                                <div class="popular-container1">
+                                    <img class="popular-section1" src='.$destination['foto'] .'>
+                                </div>
+                                <div class="popular-container2">
+                                    <p class="big-text left">' . $destination['naam'] . '</p>
+                                    <p class="medium-text left">STARS</p>
+                                    <p class="small-text left">'. $destination['location'] . '</p>
+                                    <p class="price left">$'. $destination['prijs'] . ' Per Night</p>
+                                </div>
+                                <div class="popular-container3">
+                                    <a href="book.php" class="book-button">Book Now</a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>';
+                      }
+            ?>
+
 
     </div>
     <?php
@@ -108,4 +127,5 @@ try {
 <?php
 ob_end_flush();
 ?>
+
 </html>
