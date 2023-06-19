@@ -1091,3 +1091,62 @@ input[type="file"] {
     width: 25%;
     border-radius: 20px;
 }
+.fill{
+    width: 100%;
+    height: 10vh;
+}
+.destination-container{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.destination-half{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 56px;
+    flex-direction: column;
+}
+.destination-page-image{
+    width: 100%;
+    border-radius: 20px;
+
+}
+.destination-title{
+    font-size: 22px;
+    font-weight: 600;
+}
+.destination-text{
+    font-size: 14px;
+    margin-top: 24px;
+}
+.destination-price{
+    font-size: 22px;
+    font-weight: 600;
+    margin-right: auto;
+    margin-top: 24px;
+}
+.row-container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+.book-button2{
+    background-color: #000;
+    color: #fff;
+    width: 30%;
+    margin-top: 12px;
+    padding: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    height: 46px;
+
+}
