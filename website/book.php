@@ -47,6 +47,7 @@ if (isset($_SESSION['user'])) {
         <div class="book-container2">
             <h1 class="book-text">
                 Our Destinations
+
             </h1>
         </div>
 
@@ -107,7 +108,7 @@ if (isset($_SESSION['user'])) {
                                     <p class="price left">$'. $destination['prijs'] . ' Per Night</p>
                                 </div>
                                 <div class="popular-container3">
-                                    <a href="book.php" class="book-button">Book Now</a>
+                                    <a href="destination.php?id=' . $destination['ID'] . '" class="book-button">Book Now</a>
                                 </div>
                             </div> 
                         </div>
@@ -122,6 +123,8 @@ if (isset($_SESSION['user'])) {
 
     include_once("signup.php");
 ?>
+
+
 </body>
 
 <?php
