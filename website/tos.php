@@ -18,6 +18,10 @@
     } else {
         include_once("navbar-not-logged-in.php");
     }
+    include_once("login.php");
+
+    include_once("forgot-password.php");
+    include_once("signup.php");
     ?>
     <main class="tos-main">
         <div class="tos-text-container">

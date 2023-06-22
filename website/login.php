@@ -45,8 +45,8 @@
 
                 <label class="password-class label">Password</label>
 
-                <input type="password" name="password" id="br" class="login-text" placeholder="Your Password">
-
+                <input type="password" name="password"  class="login-text" placeholder="Your Password">
+                <a href="#forgot-password">forgot password</a>
                 <input type="submit" class="submit" value="Submit">
 
             </form>

@@ -119,7 +119,7 @@ if (isset($_SESSION['user'])) {
     </div>
     <?php
     include_once("login.php");
-
+    include_once("forgot-password.php");
     include_once("signup.php");
 ?>
 
