@@ -123,7 +123,7 @@ if (isset($_SESSION['user'])) {
                         </div>
                     </div>
                 </div>
-                <a href="book.php" class="book-a-flight-button">Search Flights
+                <a href="book.php?sort=a-z" class="book-a-flight-button">Search Flights
                     <svg width="96" height="48" viewBox="0 0 96 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_3_72)">
                             <path d="M64.04 22H16V26H64.04V32L80 24L64.04 16V22Z" fill="white" />
@@ -185,7 +185,7 @@ if (isset($_SESSION['user'])) {
                 </div>
             </div>
             <div class="popular-destinations">
-            <a href="book.php" class="all-button">View All</a>
+            <a href="book.php?sort=a-z" class="all-button">View All</a>
 
             </div>
         </div>

@@ -65,7 +65,6 @@ if (isset($_SESSION['user'])) {
             <div class="filter-container">
                 <?php
                  $sorting = $_GET['sort'];
-                 var_dump($sorting);
                 ?>
                 <a href="?sort=a-z"  class="sort-a-z <?php $sorting == "a-z" ? 'background' : '' ?>">Sort By
                     A-Z</a><a href="?sort=price" <?php $sorting == "price" ? 'background' : '' ?>
