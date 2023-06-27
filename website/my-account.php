@@ -132,22 +132,24 @@ if (isset($_SESSION['user'])) {
                 </button>
                 </form>
                 
-            </div>';}
-                }
+            </div>
+            ';}
+            echo'<a href="#add">
+            <div class="admin-add">
+               
+                <p class="add-name">Add A New Destination</p>
+            </div>
+        </a>';
+        }
 
             ?>
- <a href="#add">
-                <div class="admin-add">
-                   
-                    <p class="add-name">Add A New Dish</p>
-                </div>
-            </a>
+            
         </div>
 
     </div>
     <div class="overlay" id="add">
 
-<div class="wrapper">
+<div class="wrapper2">
 
     <h3>Add A New Destination</h3>
 
@@ -158,6 +160,7 @@ if (isset($_SESSION['user'])) {
         <div class="container">
             <?php
            if (isset($_POST['send'])) {
+            $name = $_POST['name'];
             $description = $_POST['description'];
             $price = $_POST['price'];
             $location = $_POST['location'];
@@ -165,10 +168,10 @@ if (isset($_SESSION['user'])) {
             $parking = $_POST['parking'];
             $restaurant = $_POST['restaurant'];
         
-            $stmt = $connectie->prepare("INSERT INTO destinations ( description, prijs, location, beds, parking, restaurant,) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $connectie->prepare("INSERT INTO destinations (naam, description, prijs, location, beds, parking, restaurant) VALUES (?, ?, ?, ?, ?, ?, ?)");
             
-            if ($stmt->execute([$destname, $description, $price, $location, $beds, $parking, $restaurant])) {
-                echo "Dish added successfully";
+            if ($stmt->execute([$name, $description, $price, $location, $beds, $parking, $restaurant])) {
+                echo "Destination added successfully";
                 header("refresh:0");
             } else {
                 echo "Error: " . implode("", $stmt->errorinfo());
@@ -179,27 +182,29 @@ if (isset($_SESSION['user'])) {
             ?>
             <form class="form" action="my-account.php?page=admin-panel" method="post">
                 
+                <label>Destination Name</label>
+                <input name="name" type="text" class="login-text1" placeholder="Destination Name">
 
                 <label>Description</label>
-                <input type="text" name="description" class="login-text" placeholder="Description">
+                <input type="text" name="description" class="login-text1" placeholder="Description">
 
                 <label class="password-class">Price</label>
-                <input type="number" name="price" class="login-text" placeholder="Price">
+                <input type="number" name="price" class="login-text1" placeholder="Price">
 
                 <label class="password-class">Location</label>
 
-                <input type="text" name="location" class="login-text" placeholder="Location">
+                <input type="text" name="location" class="login-text1" placeholder="Location">
                 
                 <label class="password-class">Beds</label>
 
-                <input type="number" name="beds" class="login-text" placeholder="Beds">
+                <input type="number" name="beds" class="login-text1" placeholder="Beds">
                 
                 <label class="password-class">Parking</label>
 
-                <input type="text" name="parking" class="login-text" placeholder="Parking">
+                <input type="text" name="parking" class="login-text1" placeholder="Parking">
                 <label class="password-class">Restaurant</label>
 
-                <input type="text" name="restaurant" class="login-text" placeholder="Restuarant">
+                <input type="text" name="restaurant" class="login-text1" placeholder="Restuarant">
 
                 <input type="submit" name="send" class="submit" value="Submit">
             </form>

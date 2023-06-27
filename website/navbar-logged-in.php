@@ -5,7 +5,7 @@
     <h1 class="nav-text">World Wide Booking</h1>
     </a>
     <div class="nav-topics-container">
-        <a href="my-account.php" class="my-account">My Account</a>
+        <a href="my-account.php?page=settings" class="my-account">My Account</a>
         <a href="about-us.php" class="about-us">About Us</a>
         <a href="contact.php" class="contact">Contact<a>
 

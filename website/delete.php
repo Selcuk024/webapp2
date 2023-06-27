@@ -64,8 +64,8 @@ if ($stmt->execute()) {
         Destination Deleted!
         </p>
         <div class="row-container">
-        <a href="admin-panel.php?page=admin-panel" class="delete-link">Go Back To the admin panel</a>
-        <a href="index.php" class="delete-link">g back to Home</a>
+        <a href="admin-panel.php?page=admin-panel" class="delete-link">Go Back To The Admin Panel</a>
+        <a href="index.php" class="delete-link">Go Back To Home</a>
         </div>
         </div>
   </div>';

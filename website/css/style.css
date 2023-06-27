@@ -935,7 +935,6 @@ li {
 }
 .form{
     width: 75%;
-    height: 69vh;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -1360,4 +1359,24 @@ input[type="file"] {
     display: flex;
     justify-self: center;
     align-items: center;
+}
+.login-text1{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #413b3b;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 5px;
+    resize: vertical 
+}
+.wrapper2{
+    width: 30%;
+    height: 8v5h;
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 9px;
+    position: relative;
+    transition: all 1s ease-in-out;
 }
